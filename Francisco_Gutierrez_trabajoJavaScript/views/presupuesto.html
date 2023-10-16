@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Declaración del botón animado para Redes Sociales -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Declaración de fichero de estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>Presupuesto</title>
+    
+</head>
+<body>
+    <header>
+        <!-- Contenido de la cabecera y el menu <nav>. -->
+
+            <!-- Imágenes de la cabecera. -->
+            <div>
+                <img src="../img/P1.png" id="img_header" alt="Imagen de cabecera" title="Imagen de cabecera">
+            </div>
+
+            <nav>
+                <!-- Div que contiene el menú. -->
+                <div class="div_menu">
+                    <span class="botonin">
+                        <a href="../index.html" class="div_menu">Índice</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/productos.html" class="div_menu">Productos</a>
+                    </span>
+                    <span class="botonin active">
+                        <a href="#" class="div_menu">Presupuesto</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/contacto.html" class="div_menu">Contacto</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/noticias.html" target="_blank" rel="noopener noreferrer">Noticias</a>
+                    </span>
+                </div>
+            </nav>
+    </header>
+        <!-- Cabecera del formulario -->
+        <div class="div_seccion_principal">
+            <h1>Formulario de solicitud</h1>
+
+            <br><h2><u>Datos:</u></h2>
+            <div class="container">  
+                <form id="myForm" name="myForm" action="#" method="get" target="_self">
+                    <ul class="flex-outer">
+                        <div>
+                            <!-- Campo nombre, del formulario -->
+                            <label for="username">Nombre: <span aria-label="required">*</span></label>
+                            <input type="text" name="nombre" class="caja_gris" maxlength="50"
+                            size="40" id="NOMBRE" value="" placeholder="nombre (requerido)" pattern="[A-Z a-z]{4,15}"
+                            title="Escriba sólo letras entre 4 y 15 caracteres"
+                            required />
+                        </div>
+                        <div>
+                            <!-- Campo dirección, del formulario -->
+                            <label for="username">Apellidos: <span aria-label="required">*</span></label>
+                            <input type="text" name="nombre" class="caja_gris" maxlength="50"
+                            size="40" id="APELLIDOS" value="" placeholder="apellidos (requerido)" pattern="[A-Z a-z]{4,40}"
+                            title="Escriba sólo letras entre 4 y 40 caracteres"
+                            required />
+                        </div>
+                        <div>
+                            <!-- Campo teléfono de contacto, del formulario -->
+                            <label for="username">Teléfono de contacto:<span aria-label="required">*</span></label>
+                            <input type="text" name="nombre" class="caja_gris" maxlength="50"
+                            size="40" id="CONTACTO" value="" placeholder="contacto (requerido)" pattern="[0-9]{9}"
+                            title="Escriba los 9 números de su teléfono movil"
+                            required />
+                        </div>
+                        <div>
+                            <!-- Campo e-mail, del formulario -->
+                            <label for="username">Email: <span aria-label="required">*</span></label>
+                            <input type="text" name="nombre" class="caja_gris" maxlength="50"
+                            size="40" id="EMAIL" value="" placeholder="e-mail (requerido)" pattern="[a-zA-Z0-9_-.]+@[a-z0-9._-]+\.[a-z]{2,4}"
+                            title="Escriba su correo electrónico"
+                            required />
+                        </div>
+                        
+                        <!-- Formulario del apartado presupuesto -->
+                        <h2><u>Presupuesto:</u></h2>
+
+                        <!-- Producto para seleccionar -->
+                        <br>Elige un producto:
+                        <select id="producto">
+                            <option value="100">Pintura - 100 euros/mes</option>
+                            <option value="200">Impermeabilización - 200 euros/mes</option>
+                            <option value="300">Decoración - 300 euros/mes</option>
+                            <option value="600">Alisado - 600 euros/mes</option>
+                          </select>
+                          
+                          <!-- Plazo que se puede seleccionar -->
+                          <br><br>Plazo:
+                          <select id="meses">
+                            <option value="3">3 meses</option>
+                            <option value="6">6 meses</option>
+                            <option value="9">9 meses</option>
+                            <option value="12">12 meses</option>
+                          </select>
+                          
+                          <!-- Extras que se pueden añadir -->
+                          <br><br>Elige los extras para el producto:
+                          <br><br><input type="checkbox" id="extra1" value="50"><b>Color personalizado</b> - 50 euros/mes
+                          <input type="checkbox" id="extra2" value="75"><b>Colocación papel decorativo</b> - 75 euros/mes
+                          <input type="checkbox" id="extra3" value="100"><b>Terminación personalizada</b> - 100 euros/mes
+                          <input type="checkbox" id="extra4" value="125"><b>Arreglo desperfectos</b> - 125 euros/mes
+                          
+                          <!-- Precio total del producto seleccionado y sus extras -->
+                          <br><br><div id="presupuesto"><b> Presupuesto estimado: </b> <span id="total">0</span> euros.</div>
+
+                          <script src="../js/form_validation.js"></script>
+
+                        <!-- Div que contiene el apartado para aceptar condiciones del formulario. -->
+                        <h2><u>Aceptación de condiciones y envío de presupuesto:</u></h2>
+
+                        <input type="checkbox" name="nombre" class="checkbox"
+                        size="40" id="NOMBRE1" value="" required/> 
+                        <label for="username">He leído la política de privacidad<span aria-label="required">*</span></label>
+
+                        <!-- Botones de enviar y borrar -->
+                        <input type="submit" name="Boton de enviar" value="ENVIAR FORMULARIO" class="boton_form morado" />
+                        <input type="reset" name="Boton de borrado" value="BORRAR FORMULARIO" class="boton_form morado" />
+                    </ul>
+                </form>
+            </div>
+        </div>
+    <footer>
+            <!-- Contenido del pié de la página. -->
+            
+            <!-- Div que contiene el pié de página. -->
+        <div id="div_footer">
+                <!-- Link donde acceden los botones del footer. -->
+            <section class="buttons">
+                <a href="https://facebook.com" class="fa fa-facebook"></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://instagram.com" class="fa fa-instagram"></a>
+                <a href="https://linkedin.com" class="fa fa-linkedin"></a>
+            </section>
+            :: Copyright 2023 :: Painting House C/ Fernando II S/N :: <a href="../views/aviso_legal.html" target="_blank" rel="noopener noreferrer">Aviso legal</a> :: Todos los derechos reservados ::
+        </div>
+    </footer>
+</body>
+</html>

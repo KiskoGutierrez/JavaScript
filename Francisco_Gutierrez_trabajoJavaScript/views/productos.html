@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Declaración del botón animado para Redes Sociales -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Declaración de fichero de estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <!--Desplazamientos que realizan las imagenes de la galería al pulsar las flechas-->
+    <script>
+        function moverizquierda()
+            {
+            var imagen5;
+            imagen5 = document.getElementById('imagen5').src;
+            var imagencentroizq;
+            imagencentroizq = document.getElementById('imagen4').src;
+            document.getElementById('imagen6').src = document.getElementById('imagen1').src;
+            document.getElementById('imagen1').src = document.getElementById('imagen2').src;
+            document.getElementById('imagen2').src = document.getElementById('imagen3').src;
+            document.getElementById('imagen3').src = document.getElementById('imagen4').src;
+            document.getElementById('imagen4').src = document.getElementById('imagen5').src;
+            document.getElementById('imagen5').src = document.getElementById('imagen6').src;
+            document.getElementById('imagen6').src = imagen5;
+            document.getElementById('imagen').src = imagencentroizq;
+        }
+        function moverderecha()
+            {
+            var imagen1;
+            imagen1 = document.getElementById('imagen1').src;
+            var imagencentroder;
+            imagencentroder = document.getElementById('imagen2').src;
+            document.getElementById('imagen1').src = document.getElementById('imagen6').src;
+            document.getElementById('imagen6').src = document.getElementById('imagen5').src;
+            document.getElementById('imagen5').src = document.getElementById('imagen4').src;
+            document.getElementById('imagen4').src = document.getElementById('imagen3').src;
+            document.getElementById('imagen3').src = document.getElementById('imagen2').src;
+            document.getElementById('imagen2').src = document.getElementById('imagen1').src;
+            document.getElementById('imagen2').src = imagen1;
+            document.getElementById('imagen').src = imagencentroder;
+        }
+
+    </script>
+
+    <title>Productos</title>
+    
+</head>
+<body>
+    <header>
+        <!-- Contenido de la cabecera y el menu <nav>. -->
+
+            <!-- Imágenes de la cabecera. -->
+            <div>
+                <img src="../img/P1.png" id="img_header" alt="Imagen de cabecera" title="Imagen de cabecera">
+            </div>
+
+            <nav>
+                <!-- Div que contiene el menú. -->
+                <div class="div_menu">
+                    <span class="botonin">
+                        <a href="../index.html" class="div_menu">Índice</a>
+                    </span>
+                    <span class="botonin active">
+                        <a href="#" class="div_menu">Productos</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/presupuesto.html" class="div_menu">Presupuesto</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/contacto.html" class="div_menu">Contacto</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/noticias.html" target="_blank" rel="noopener noreferrer">Noticias</a>
+                    </span>
+                </div>
+            </nav>
+    </header>
+    <section>
+        <article>
+            <div class="div_seccion_principal">
+                <!-- Imagenes de la galería de fotos -->
+                <div><h1>Trabajos realizados</h1></div>
+            <main>
+                <div id="cuerpo" align="center">
+                    <div id="fizq">
+                        <img src="../img/FI.png" width="100" height="130" onclick="moverderecha()">
+                    </div>
+                    <div id="izq85">
+                        <img id="imagen1" src="../img/1.jpg" width="130" height="130">
+                    </div>
+                    <div id="izq50">
+                        <img id="imagen2" src="../img/2.jpg" width="130" height="130">
+                    </div>
+                    <div id="centro">
+                        <img id="imagen3" src="../img/3.jpg" width="130" height="130">
+                    </div>
+                    <div id="centro2">
+                        <img id="imagen4" src="../img/4.jpg" width="130" height="130">
+                    </div>
+                    <div id="der50">
+                        <img id="imagen5" src="../img/5.jpg" width="130" height="130">
+                    </div>
+                    <div id="der85">
+                        <img id="imagen6" src="../img/6.jpg" width="130" height="130">
+                    </div>
+                    <div id="fder">
+                        <img src="../img/FD.png" width="100" height="130" onclick="moverizquierda()">
+                    </div>
+                    <div id="marco" align="center">
+                        <img id="imagen" src="../img/1.jpg" width="500" height="500">
+                    </div>
+
+                </div>
+            </main>
+            </div>
+        </article>
+        <div class="div_seccion_principal">
+        <article>
+                <h1>Nuestra Marca</h1>
+            <!-- Contenido del articulo 2. -->
+                <b>Barpimo es una empresa con 40 años de trayectoria</b> en el ámbito de las pinturas, barnices y elementos varios para la decoración. En su historial se cuentan productos de primera calidad, al 
+                igual que una clientela que se extiende a varios países del mundo. Su línea incluye pinturas, barnices, esmaltes y resinas.
+                <p>El origen de Barpimo se circunscribe a la localidad de Córdoba y justo durante la década de los años 90’s se produjo un proceso de internacionalización con la apertura de varias filiales. Uno de los factores claves en su éxito son sus amplios laboratorios con tecnología de punta.
+                <p>La gama de colores ofrecida por Barpimo es en extremo amplia y con colores acordes a las últimas tendencias de la decoración. Asimismo, Barpimo ofrece los mejores productos y soluciones no sólo en relación a pinturas, sino también en cuanto a tintes para madera, resinas  y barnices.
+                Adicionalmente, la línea industrial de Barpimo posee las mejores pinturas y esmaltes, destacándose las pinturas metalizadas.
+                Inclusive, las pinturas para suelos que ofrece esta marca han obtenido muy buenos elogios por parte de la clientela.</p>
+        </article>
+        </div>
+    </section>
+    <footer>
+        <!-- Contenido del pié de la página. -->
+        
+        <!-- Div que contiene el pié de página. -->
+        <div id="div_footer">
+            <!-- Link donde acceden los botones del footer. -->
+            <section class="buttons">
+                <a href="https://facebook.com" class="fa fa-facebook"></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://instagram.com" class="fa fa-instagram"></a>
+                <a href="https://linkedin.com" class="fa fa-linkedin"></a>
+            </section>
+            :: Copyright 2023 :: Painting House C/ Fernando II S/N :: <a href="../views/aviso_legal.html" target="_blank" rel="noopener noreferrer">Aviso legal</a> :: Todos los derechos reservados ::
+        </div>
+    </footer>
+</body>
+</html>

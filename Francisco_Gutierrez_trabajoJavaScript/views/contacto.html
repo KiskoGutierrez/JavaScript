@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/> 
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
+    <!-- Declaración del botón animado para Redes Sociales -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Declaración de fichero de estilos -->
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <title>Contacto</title>
+    
+</head>
+<body>
+    <header>
+        <!-- Contenido de la cabecera y el menu <nav>. -->
+
+            <!-- Imágenes de la cabecera. -->
+            <div>
+                <img src="../img/P1.png" id="img_header" alt="Imagen de cabecera" title="Imagen de cabecera">
+            </div>
+
+            <nav>
+                <!-- Div que contiene el menú. -->
+                <div class="div_menu">
+                    <span class="botonin">
+                        <a href="../index.html" class="div_menu">Índice</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/productos.html" class="div_menu">Productos</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/presupuesto.html" class="div_menu">Presupuesto</a>
+                    </span>
+                    <span class="botonin active">
+                        <a href="#" class="div_menu">Contacto</a>
+                    </span>
+                    <span class="botonin">
+                        <a href="../views/noticias.html" target="_blank" rel="noopener noreferrer">Noticias</a>
+                    </span>
+                </div>
+            </nav>
+    </header>
+    <section>
+
+        <!-- id con el mapa y sus funciones correspondientes -->
+        <div id="map">
+            <script src="https://unpkg.com/leaflet@1.0.2/dist/leaflet.js" ></script>
+            <script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
+            <script>
+                if(navigator.geolocation){
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        var latitude = position.coords.latitude;
+                        var longitude = position.coords.longitude;
+            
+                        var map = L.map('map', {
+                            center: [latitude, longitude],
+                            zoom: 12
+                        });
+            
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+
+                        var control = L.Routing.control({
+                            waypoints: [
+                                L.latLng(latitude, longitude),
+                                L.latLng(37.3828300, -5.9731700)
+                            ],
+                            language: 'es'
+                        }).addTo(map);
+                        
+                    });
+                }
+                else{
+                    var map = L.map('map', {
+                        center: [37.3828300, -5.9731700],
+                        zoom: 17
+                    });
+            
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                        }).addTo(map);
+                }
+            </script>
+        </div>
+        <div class="div_seccion_principal">
+            <h2><b><u>Dirección de la empresa:</u></b></h2>
+            <article>
+            <!-- Contenido de la dirección de la empresa. -->
+            <span> 
+               Painting House está situado en C/ Polígono Norte, nave 86 módulo C – 14000 Sevilla, Andalucía, España
+            </span>
+            </article>
+        </div>
+    </section>
+    <footer>
+        <!-- Contenido del pié de la página. -->
+        
+        <!-- Div que contiene el pié de página. -->
+        <div id="div_footer">
+            <!-- Link donde acceden los botones del footer. -->
+            <section class="buttons">
+                <a href="https://facebook.com" class="fa fa-facebook"></a>
+                <a href="https://twitter.com" class="fa fa-twitter"></a>
+                <a href="https://instagram.com" class="fa fa-instagram"></a>
+                <a href="https://linkedin.com" class="fa fa-linkedin"></a>
+            </section>
+            :: Copyright 2023 :: Painting House C/ Fernando II S/N :: <a href="../views/aviso_legal.html" target="_blank" rel="noopener noreferrer">Aviso legal</a> :: Todos los derechos reservados ::
+        </div>
+    </footer>
+</body>
+</html>
